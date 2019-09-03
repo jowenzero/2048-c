@@ -438,16 +438,15 @@ int main()
 			menuArt();
 			
 			// display game instructions
-			printf("Hangman Instructions");
-			printf("\n1. Open Hangman.exe");
+			printf("2048 Instructions");
+			printf("\n1. Open 2048.exe");
 			printf("\n2. Choose Menu Option (input number 1/2/3 to proceed)");
 			printf("\n	a) Play Option");
 			printf("\n		- Type the word \"Start Game\" (including spaces)");
-			printf("\n		- Guess the word by inputing a character");
-			printf("\n		- For level 1-20, mistake tolerance is set to 6");
-			printf("\n		  For level 21-31, mistake tolerance is set to 5");
-			printf("\n		  For level 31 keatas, mistake tolerance is set to 4");
-			printf("\n		- The game is over when the player reached the mistake tolerance limit");
+			printf("\n		- Combine the same number in the grid to create a new number by moving both numbers together");
+			printf("\n		- To move a number, input character W, A, S, D then click 'Enter'");
+			printf("\n		- Player wins when a number in the grid reach 2048");
+			printf("\n		- The game is over when no number can be moved or combined");
 			printf("\n	b) Instruction Option");
 			printf("\n		Shows game instructions");
 			printf("\n	c) Exit Option");
