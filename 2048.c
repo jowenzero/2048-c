@@ -22,7 +22,6 @@ int main()
 	int grid[4][4], grid2[4][4];
 	int choice;
 	int maxNumber;
-	int flush;
 	
 	// char variable
 	char start[10];
@@ -68,7 +67,7 @@ int main()
 			choice = 0;
 			printf("Choice: ");
 			scanf(" %d", &choice);
-			while ((flush = getchar()) != '\n' && flush != EOF);
+			while (getchar() != '\n');
 		}
 		while ((choice != 1 && choice != 2 && choice != 3));
 		
@@ -82,7 +81,7 @@ int main()
 				strcpy(start, "\0");
 				printf("Please type 'Start Game' to begin: ");
 				scanf("%[^\n]s", start);
-				while ((flush = getchar()) != '\n' && flush != EOF);
+				while (getchar() != '\n');
 			}
 			while(validStart(start) == false);
 			
@@ -184,7 +183,7 @@ int main()
 					{
 						printf("Continue[y/n] : ");			
 						scanf(" %c", &input);
-						while ((flush = getchar()) != '\n' && flush != EOF);
+						while (getchar() != '\n');
 					}
 					while (input != 'y' && input != 'n');
 					
@@ -272,7 +271,7 @@ int main()
 				validInput = true;
 				printf("\nInput Key : ");
 				scanf(" %c", &input);
-				while ((flush = getchar()) != '\n' && flush != EOF);
+				while (getchar() != '\n');
 						
 				// move numbers on grid depending on user input
 				switch (input)
