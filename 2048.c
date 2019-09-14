@@ -22,6 +22,7 @@ int main()
 	int grid[4][4], grid2[4][4];
 	int choice;
 	int maxNumber;
+	int flush;
 	
 	// char variable
 	char start[10];
@@ -66,8 +67,8 @@ int main()
 		{
 			choice = 0;
 			printf("Choice: ");
-			scanf("%d", &choice);
-			fflush(stdin);
+			scanf(" %d", &choice);
+			while ((flush = getchar()) != '\n' && flush != EOF);
 		}
 		while ((choice != 1 && choice != 2 && choice != 3));
 		
@@ -78,10 +79,10 @@ int main()
 			// prompt user to start game
 			do
 			{
-				strcpy(start, "\n");
+				strcpy(start, "\0");
 				printf("Please type 'Start Game' to begin: ");
 				scanf("%[^\n]s", start);
-				fflush(stdin);
+				while ((flush = getchar()) != '\n' && flush != EOF);
 			}
 			while(validStart(start) == false);
 			
@@ -92,8 +93,8 @@ int main()
 					
 			
 			srand(time(NULL));
-			temp1 = 4;
-			temp2 = 4;
+			temp1 = 0;
+			temp2 = 0;
 			maxNumber = 0;
 			
 			// generate first two numbers in random spots on grid
@@ -182,8 +183,8 @@ int main()
 					do
 					{
 						printf("Continue[y/n] : ");			
-						scanf("%c", &input);
-						fflush(stdin);
+						scanf(" %c", &input);
+						while ((flush = getchar()) != '\n' && flush != EOF);
 					}
 					while (input != 'y' && input != 'n');
 					
@@ -270,8 +271,8 @@ int main()
 				gotoxy(0, 20);
 				validInput = true;
 				printf("\nInput Key : ");
-				scanf("%c", &input);
-				fflush(stdin);
+				scanf(" %c", &input);
+				while ((flush = getchar()) != '\n' && flush != EOF);
 						
 				// move numbers on grid depending on user input
 				switch (input)
